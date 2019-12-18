@@ -11,14 +11,14 @@ import UIKit
 /**
  ViewControllers who conform this protocol can be identified by their class names and initialize.
  */
-protocol ViewControllerIdentifiable {
+public protocol ViewControllerIdentifiable {
     /// The method should return ViewController Identifier in the storyboard.
     static func identifier() -> String
     /// The method should return Storyboard name of the ViewController.
     static func storyboardName() -> String
 }
 
-extension ViewControllerIdentifiable {
+public extension ViewControllerIdentifiable {
     
     /**
      Returns class name as identifier as default.

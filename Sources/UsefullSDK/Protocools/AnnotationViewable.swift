@@ -12,7 +12,7 @@ import UIKit
 /**
  Annotations should conform that protocol to render by the map
  */
-protocol AnnotationViewable: MKAnnotation {
+public protocol AnnotationViewable: MKAnnotation {
 
     /**
      MapKit can ask to get view of the annotation when `mapView(_:viewFor:)` is called.
@@ -25,7 +25,7 @@ protocol AnnotationViewable: MKAnnotation {
 @available(iOS 11.0, *)
 extension MKClusterAnnotation: AnnotationViewable {
 
-    func viewForAnnotation(for mapView: MKMapView) -> MKAnnotationView {
+    public func viewForAnnotation(for mapView: MKMapView) -> MKAnnotationView {
         return mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier, for: self)
     }
 

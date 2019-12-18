@@ -11,9 +11,9 @@ import UIKit
 /**
  Table Cells who conform this protocol can be identified by their class names and dequeueable.
  */
-protocol TableCellIdentifiable: UITableViewCell { }
+public protocol TableCellIdentifiable: UITableViewCell { }
 
-extension TableCellIdentifiable {
+public extension TableCellIdentifiable {
     
     /**
      Returns class name as identifier.
@@ -30,7 +30,7 @@ extension TableCellIdentifiable {
      - returns: New Cell
      */
     static func initialize(for tableView: UITableView, indexPath: IndexPath) -> Self {
-        let cell = tableView.dequeueCell(withIdentifier: identifier(), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(), for: indexPath)
         return cell as! Self
     }
     

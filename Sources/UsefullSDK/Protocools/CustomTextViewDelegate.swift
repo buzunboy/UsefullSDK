@@ -11,7 +11,7 @@ import Foundation
 /**
  Delegate that have extra methods for the UITextView.
  */
-protocol CustomTextViewDelegate: class {
+public protocol CustomTextViewDelegate: class {
 
     /**
      Tells the delegate that TextView is became responder.

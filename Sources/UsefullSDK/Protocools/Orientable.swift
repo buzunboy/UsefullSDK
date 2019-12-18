@@ -11,14 +11,14 @@ import UIKit
 /**
 View Controllers who conform that protocol, will mark themselves as only accepting landscape orientation.
 */
-protocol Landscapeable: UIViewController { }
+public protocol Landscapeable: UIViewController { }
 
 /**
 View Controllers who conform that protocol, will mark themselves as only accepting portrait orientation.
 */
-protocol Portaiteable: UIViewController { }
+public protocol Portaiteable: UIViewController { }
 
 /**
  View Controllers who conform that protocol, will mark themselves as accepting all screen rotations.
  */
-protocol AllOrientateable: UIViewController { }
+public protocol AllOrientateable: UIViewController { }

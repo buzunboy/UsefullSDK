@@ -11,9 +11,9 @@ import UIKit
 /**
  Collection Cells who conform this protocol can be identified by their class names and dequeueable.
  */
-protocol CollectionCellIdentifiable: UICollectionViewCell { }
+public protocol CollectionCellIdentifiable: UICollectionViewCell { }
 
-extension CollectionCellIdentifiable {
+public extension CollectionCellIdentifiable {
     
     /**
      Returns class name as identifier.
