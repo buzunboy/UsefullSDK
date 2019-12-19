@@ -29,8 +29,8 @@ public extension TableCellIdentifiable {
      - parameter indexPath: `IndexPath` for the cell.
      - returns: New Cell
      */
-    static func initialize(for tableView: UITableView, indexPath: IndexPath) -> Self {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(), for: indexPath)
+    static func initialize(for tableView: UITableView, indexPath: IndexPath, reusableIdentifier: String? = nil) -> Self {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusableIdentifier ?? identifier(), for: indexPath)
         return cell as! Self
     }
     
@@ -42,3 +42,5 @@ public extension TableCellIdentifiable {
         tableView?.register(nibName: identifier())
     }
 }
+
+extension UITableViewCell: TableCellIdentifiable { }
