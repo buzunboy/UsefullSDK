@@ -2,6 +2,5 @@
 
 ### A most useful SDK written for iOS Projects.
 
-## Extensions
 
-
+Check out the `docs/index.html` file to explore all available extensions.
