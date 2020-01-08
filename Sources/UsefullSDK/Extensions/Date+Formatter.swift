@@ -33,23 +33,6 @@ public extension Date {
         return formatter.string(from: self)
     }
     
-    /// Returns date object with the custom format as string.
-    var customFormat: String {
-        var retVal = ""
-        if self.isToday {
-            retVal = "\("dateFormat_today".localized), "
-        } else if self.isYesterday {
-            retVal = "\("dateFormat_yesterday".localized), "
-        } else if self.isTomorrow {
-            retVal = "\("dateFormat_tomorrow".localized), "
-        } else if self.isTheDayAfterTomorrow {
-            retVal = "\("dateFormat_nextDay".localized), "
-        }
-        
-        retVal = "\(retVal)\(self.format(with: "EEEE dd.MMMM"))"
-        return retVal
-    }
-    
     /// Returns `true` if date corresponds today.
     var isToday: Bool {
         return self.isSameDay(with: Date())

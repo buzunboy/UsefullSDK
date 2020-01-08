@@ -12,4 +12,18 @@ final class UsefullSDKTests: XCTestCase {
     static var allTests = [
         ("testExample", testExample),
     ]
+    
+    func testInsertArray() {
+        var array: [Int] = [1, 2]
+        let elementToAdd = 3
+        array += elementToAdd
+        XCTAssertTrue(array.contains(where: { $0 == elementToAdd }))
+    }
+    
+    func testCGSize() {
+        var size = CGSize(width: 2, height: 3)
+        let sizeToRemove = CGSize(width: 4, height: 1)
+        let valueToRemove = 3
+        size -= valueToRemove
+    }
 }

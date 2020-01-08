@@ -40,4 +40,22 @@ public extension Array {
         }
     }
     
+    /// Inserts the element into given array.
+    /// - Parameters:
+    ///   - first: Array
+    ///   - second: Element to insert inside of the array.
+    static func + (first: inout Array<Element>, second: Element?) -> Array<Element> {
+        first.insert(second)
+        return first
+    }
+    
+    /// Inserts the element into given array
+    /// - Parameters:
+    ///   - left: Array
+    ///   - right: Element to insert inside of the array.
+    
+    static func += (left: inout Array<Element>, right: Element?) {
+        left.insert(right)
+    }
+    
 }
