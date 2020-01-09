@@ -8,11 +8,16 @@
 
 import UIKit
 
-public extension UIView {
-    
-    /// Creates views from the Nib files if they have same name with their classes.
-    class func create<T: UIView>() -> T {
-        return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
-    }
-    
+extension UIView: ViewExpressable {
 }
+
+public protocol ViewExpressable: UIView {
+}
+
+public extension ViewExpressable {
+    /// Creates views from the Nib files if they have same name with their classes.
+    static func create() -> Self {
+        return Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)![0] as! Self
+    }
+}
+
