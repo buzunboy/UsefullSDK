@@ -20,10 +20,6 @@ import UIKit
         fatalError("Use init:color instead")
     }
     
-    /// Initializes color with the given `UIColor`.
-    /// - Parameters:
-    ///   - color: Base color for the object
-    ///   - callback: Will be called when any screen brightness changes notified.
     @objc public init(color: UIColor, callback: @escaping ColorUpdateCallback) {
         self.hue = 0
         self.brightness = 0
@@ -33,6 +29,17 @@ import UIKit
                      brightness: &brightness, alpha: &alpha)
         self.callback = callback
         super.init()
+    }
+    
+    /// Creates adaptive color with the given `UIColor`.
+    /// - Parameters:
+    ///   - color: Base color for the object
+    ///   - callback: Will be called when any screen brightness changes notified.
+    @objc static public func color(from color: UIColor, callback: @escaping ColorUpdateCallback) {
+        
+    }
+    
+    private func initialize() {
         NotificationCenter.default.addObserver(self, selector: #selector(didScreenBrightnessChanged),
                                                name: UIScreen.brightnessDidChangeNotification, object: nil)
         self.didScreenBrightnessChanged()
