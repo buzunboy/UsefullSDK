@@ -12,6 +12,11 @@ public protocol CellStylable { }
 public struct TextCellStylable: CellStylable {
     var textColor: UIColor
     var font: UIFont
+    
+    public init(textColor: UIColor, font: UIFont) {
+        self.textColor = textColor
+        self.font = font
+    }
 }
 
 public struct TitleCellStylable: CellStylable {

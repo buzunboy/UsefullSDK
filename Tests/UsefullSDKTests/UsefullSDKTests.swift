@@ -26,4 +26,25 @@ final class UsefullSDKTests: XCTestCase {
         let valueToRemove = 3
         size -= valueToRemove
     }
+    
+    func testCells() {
+        let exp = XCTestExpectation(description: "TEST")
+        let tableView = UITableView(frame: .zero)
+        let textData = TextCellModulable(text: "ASD")
+        let textStyle = TextCellStylable(textColor: .red, font: .systemFont(ofSize: 15))
+        let textContent = TextCellModule(data: textData, style: textStyle, cell: UTextCell.self)
+        let contents = [[textContent]]
+        let dataSource = ModulableTableViewDataSource(tableView: tableView, contents: contents)
+        tableView.reloadData()
+        tableView.dataSource = dataSource
+        if #available(iOS 10.0, *) {
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
+                exp.fulfill()
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
 }

@@ -11,12 +11,18 @@ public protocol CellModuleInitializable {
     var cellType: UBaseTableViewCell.Type { get }
 }
 
-struct TextCellModule: CellModuleInitializable {    
+public struct TextCellModule: CellModuleInitializable {    
     var data: TextCellModulable
     var style: TextCellStylable
     var cell: UTextCell.Type
     
     var cellType: UBaseTableViewCell.Type { return self.cell }
+    
+    public init(data: TextCellModulable, style: TextCellStylable, cell: UTextCell.Type) {
+        self.data = data
+        self.style = style
+        self.cell = cell
+    }
 }
 
 struct TitleCellModule {
