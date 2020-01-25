@@ -10,7 +10,7 @@ import UIKit
 open class UTextCell: UBaseTableViewCell {
     open var textView: UITextView? { return nil }
     
-    var module: TextCellModule<UTextCell>? {
+    var module: TextCellModule? {
         didSet {
             self.reloadUI()
             self.reloadData()
