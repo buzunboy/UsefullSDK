@@ -20,7 +20,7 @@ public class ModulableTableViewDataSource: NSObject, UITableViewDataSource {
             self.tableView.reloadData()
         }}
     
-    init(tableView: UITableView, contents: [[CellModuleInitializable]]) {
+    public init(tableView: UITableView, contents: [[CellModuleInitializable]]) {
         self.tableView = tableView
         self.contents = contents
         super.init()

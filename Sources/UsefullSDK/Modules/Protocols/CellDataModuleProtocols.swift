@@ -12,6 +12,14 @@ public protocol CellModulable { }
 public struct TextCellModulable: CellModulable {
     var text: String?
     var attributedText: NSAttributedString?
+    
+    public init(text: String) {
+        self.text = text
+    }
+    
+    public init(text: NSAttributedString?) {
+        self.attributedText = text
+    }
 }
 
 public struct TitleCellModulable: CellModulable {

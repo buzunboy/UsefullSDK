@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CellModuleInitializable {
+public protocol CellModuleInitializable {
     var cellType: UBaseTableViewCell.Type { get }
 }
 
