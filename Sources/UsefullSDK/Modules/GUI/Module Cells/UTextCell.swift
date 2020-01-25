@@ -7,8 +7,8 @@
 
 import UIKit
 
-public class UTextCell: UBaseTableViewCell {
-    var textView: UITextView? { return nil }
+open class UTextCell: UBaseTableViewCell {
+    open var textView: UITextView? { return nil }
     
     var module: TextCellModule? {
         didSet {
@@ -16,7 +16,7 @@ public class UTextCell: UBaseTableViewCell {
             self.reloadData()
         }}
     
-    public override func reloadUI() {
+    open override func reloadUI() {
         super.reloadUI()
         guard let style = self.module?.style else { return }
         
@@ -24,7 +24,7 @@ public class UTextCell: UBaseTableViewCell {
         self.textView?.font = style.font
     }
     
-    public override func reloadData() {
+    open override func reloadData() {
         super.reloadData()
         guard let data = self.module?.data else { return }
         
