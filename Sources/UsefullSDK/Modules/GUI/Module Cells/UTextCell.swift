@@ -7,9 +7,13 @@
 
 import UIKit
 
+/// Base cell for `TextCellModule`.
 open class UTextCell: UBaseTableViewCell {
+    
+    /// The classes inherited should override this property with the one that is demanded to be used.
     open var textView: UITextView? { return nil }
     
+    /// Module which will load and stylize the cell.
     var module: TextCellModule? {
         didSet {
             self.reloadUI()
@@ -20,8 +24,11 @@ open class UTextCell: UBaseTableViewCell {
         super.reloadUI()
         guard let style = self.module?.style else { return }
         
-        self.textView?.textColor = style.textColor
-        self.textView?.font = style.font
+        if self.module?.data.attributedText == nil {
+            self.textView?.textColor = style.textColor
+            self.textView?.font = style.font
+            self.textView?.textAlignment = style.alignment
+        }
     }
     
     open override func reloadData() {

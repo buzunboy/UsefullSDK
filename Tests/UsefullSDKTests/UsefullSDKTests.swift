@@ -30,8 +30,8 @@ final class UsefullSDKTests: XCTestCase {
     func testCells() {
         let exp = XCTestExpectation(description: "TEST")
         let tableView = UITableView(frame: .zero)
-        let textData = TextCellModulable(text: "ASD")
-        let textStyle = TextCellStylable(textColor: .red, font: .systemFont(ofSize: 15))
+        let textData = TextCellData(text: "ASD")
+        let textStyle = TextCellStyle(textColor: .red, font: .systemFont(ofSize: 15))
         let textContent = TextCellModule(data: textData, style: textStyle, cell: UTextCell.self)
         let contents = [[textContent]]
         let dataSource = ModulableTableViewDataSource(tableView: tableView, contents: contents)

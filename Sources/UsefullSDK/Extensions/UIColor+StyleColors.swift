@@ -37,5 +37,19 @@ public extension UIColor {
         }
     }
 
- 
+    class var systemLabel: UIColor {
+        if #available(iOS 13.0, *) {
+            return .label
+        } else {
+            return .black
+        }
+    }
+    
+    class var systemLink: UIColor {
+        if #available(iOS 13.0, *) {
+            return .link
+        } else {
+            return .systemBlue
+        }
+    }
 }
