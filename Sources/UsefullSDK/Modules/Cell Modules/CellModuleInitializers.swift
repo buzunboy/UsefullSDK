@@ -14,7 +14,7 @@ public protocol CellModuleInitializable {
     var cellType: UBaseTableViewCell.Type { get }
 }
 
-/// Structure that holds all information necessary for cells which are inherited from `UTextCell`.
+/// Structure that holds all information necessary for cells which are inherited from `TextCellViewModel`.
 public struct TextCellModule: CellModuleInitializable {
     
     /// Data model for the cell.
@@ -24,7 +24,7 @@ public struct TextCellModule: CellModuleInitializable {
     var style: TextCellStyle
     
     /// Cell type.
-    var cell: UTextCell.Type
+    var cell: TextCellViewModel.Type
     
     public var cellType: UBaseTableViewCell.Type { return self.cell }
     
@@ -35,14 +35,14 @@ public struct TextCellModule: CellModuleInitializable {
     ///   - cell: Cell type that will be used.
     public init(data: TextCellData,
                 style: TextCellStyle,
-                cell: UTextCell.Type) {
+                cell: TextCellViewModel.Type) {
         self.data = data
         self.style = style
         self.cell = cell
     }
 }
 
-/// Structure that holds all information necessary for cells which are inherited from `UTitleCell`.
+/// Structure that holds all information necessary for cells which are inherited from `TitleCellViewModel`.
 public struct TitleCellModule: CellModuleInitializable {
     
     /// Data model for the cell.
@@ -52,7 +52,7 @@ public struct TitleCellModule: CellModuleInitializable {
     var style: TitleCellStyle
     
     /// Cell type.
-    var cell: UTitleCell.Type
+    var cell: TitleCellViewModel.Type
     
     public var cellType: UBaseTableViewCell.Type { return self.cell }
     
@@ -63,14 +63,14 @@ public struct TitleCellModule: CellModuleInitializable {
     ///   - cell: Cell type that will be used.
     public init(data: TitleCellData,
                 style: TitleCellStyle,
-                cell: UTitleCell.Type) {
+                cell: TitleCellViewModel.Type) {
         self.data = data
         self.style = style
         self.cell = cell
     }
 }
 
-/// Structure that holds all information necessary for cells which are inherited from `ULeftIconCell`.
+/// Structure that holds all information necessary for cells which are inherited from `LeftIconCellViewModel`.
 public struct LeftIconCellModule: CellModuleInitializable {
     
     /// Data model for the cell.
@@ -80,7 +80,7 @@ public struct LeftIconCellModule: CellModuleInitializable {
     var style: LeftIconTextCellStyle
     
     /// Cell type.
-    var cell: ULeftIconCell.Type
+    var cell: LeftIconCellViewModel.Type
     
     public var cellType: UBaseTableViewCell.Type { return self.cell }
     
@@ -91,14 +91,14 @@ public struct LeftIconCellModule: CellModuleInitializable {
     ///   - cell: Cell type that will be used.
     public init(data: LeftIconTextCellData,
                 style: LeftIconTextCellStyle,
-                cell: ULeftIconCell.Type) {
+                cell: LeftIconCellViewModel.Type) {
         self.data = data
         self.style = style
         self.cell = cell
     }
 }
 
-/// Structure that holds all information necessary for cells which are inherited from `UExpandableTitleCell`.
+/// Structure that holds all information necessary for cells which are inherited from `ExpandableTitleCellViewModel`.
 public struct ExpandableTitleCellModule: CellModuleInitializable {
     
     /// Data model for the cell.
@@ -108,7 +108,7 @@ public struct ExpandableTitleCellModule: CellModuleInitializable {
     var style: ExpandableTitleCellStyle
     
     /// Cell type.
-    var cell: UExpandableTitleCell.Type
+    var cell: ExpandableTitleCellViewModel.Type
     
     public var cellType: UBaseTableViewCell.Type { return self.cell }
     
@@ -119,14 +119,14 @@ public struct ExpandableTitleCellModule: CellModuleInitializable {
     ///   - cell: Cell type that will be used.
     public init(data: ExpandableTitleCellData,
                 style: ExpandableTitleCellStyle,
-                cell: UExpandableTitleCell.Type) {
+                cell: ExpandableTitleCellViewModel.Type) {
         self.data = data
         self.style = style
         self.cell = cell
     }
 }
 
-/// Structure that holds all information necessary for cells which are inherited from `UAccessoryCell`.
+/// Structure that holds all information necessary for cells which are inherited from `AccessoryCellViewModel`.
 public struct AccessoryCellModule: CellModuleInitializable {
     
     /// Data model for the cell.
@@ -136,7 +136,7 @@ public struct AccessoryCellModule: CellModuleInitializable {
     var style: AccessoryCellStyle
     
     /// Cell type.
-    var cell: UAccessoryCell.Type
+    var cell: AccessoryCellViewModel.Type
 
     public var cellType: UBaseTableViewCell.Type { return self.cell }
     
@@ -147,14 +147,14 @@ public struct AccessoryCellModule: CellModuleInitializable {
     ///   - cell: Cell type that will be used.
     public init(data: AccessoryCellData,
                 style: AccessoryCellStyle,
-                cell: UAccessoryCell.Type) {
+                cell: AccessoryCellViewModel.Type) {
         self.data = data
         self.style = style
         self.cell = cell
     }
 }
 
-/// Structure that holds all information necessary for cells which are inherited from `UImageCell`.
+/// Structure that holds all information necessary for cells which are inherited from `ImageCellViewModel`.
 public struct ImageCellModule: CellModuleInitializable {
 
     /// Data model for the cell.
@@ -164,7 +164,7 @@ public struct ImageCellModule: CellModuleInitializable {
     var style: ImageCellStyle
     
     /// Cell type.
-    var cell: UImageCell.Type
+    var cell: ImageCellViewModel.Type
 
     public var cellType: UBaseTableViewCell.Type { return self.cell }
     
@@ -175,14 +175,14 @@ public struct ImageCellModule: CellModuleInitializable {
     ///   - cell: Cell type that will be used.
     public init(data: ImageCellData,
                 style: ImageCellStyle,
-                cell: UImageCell.Type) {
+                cell: ImageCellViewModel.Type) {
         self.data = data
         self.style = style
         self.cell = cell
     }
 }
 
-/// Structure that holds all information necessary for cells which are inherited from `UVideoCell`.
+/// Structure that holds all information necessary for cells which are inherited from `VideoCellViewModel`.
 struct VideoCellModule: CellModuleInitializable {
 
     /// Data model for the cell.
@@ -192,7 +192,7 @@ struct VideoCellModule: CellModuleInitializable {
     var style: VideoCellStyle
     
     /// Cell type.
-    var cell: UTextCell.Type
+    var cell: VideoCellViewModel.Type
 
     public var cellType: UBaseTableViewCell.Type { return self.cell }
     
@@ -203,14 +203,14 @@ struct VideoCellModule: CellModuleInitializable {
     ///   - cell: Cell type that will be used.
     public init(data: VideoCellData,
                 style: VideoCellStyle,
-                cell: UTextCell.Type) {
+                cell: TextCellViewModel.Type) {
         self.data = data
         self.style = style
         self.cell = cell
     }
 }
 
-/// Structure that holds all information necessary for cells which are inherited from `UAudioCell`.
+/// Structure that holds all information necessary for cells which are inherited from `AudioCellViewModel`.
 struct AudioCellModule: CellModuleInitializable {
 
     /// Data model for the cell.
@@ -220,7 +220,7 @@ struct AudioCellModule: CellModuleInitializable {
     var style: AudioCellStyle
     
     /// Cell type.
-    var cell: UTextCell.Type
+    var cell: AudioCellViewModel.Type
 
     public var cellType: UBaseTableViewCell.Type { return self.cell }
     
@@ -231,7 +231,7 @@ struct AudioCellModule: CellModuleInitializable {
     ///   - cell: Cell type that will be used.
     public init(data: AudioCellData,
                 style: AudioCellStyle,
-                cell: UTextCell.Type) {
+                cell: TextCellViewModel.Type) {
         self.data = data
         self.style = style
         self.cell = cell
@@ -248,7 +248,7 @@ struct GalleryCellModule: CellModuleInitializable {
     var style: GalleryCellStyle
     
     /// Cell type.
-    var cell: UTextCell.Type
+    var cell: TextCellViewModel.Type
 
     public var cellType: UBaseTableViewCell.Type { return self.cell }
     
@@ -259,7 +259,7 @@ struct GalleryCellModule: CellModuleInitializable {
     ///   - cell: Cell type that will be used.
     public init(data: GalleryCellData,
                 style: GalleryCellStyle,
-                cell: UTextCell.Type) {
+                cell: TextCellViewModel.Type) {
         self.data = data
         self.style = style
         self.cell = cell

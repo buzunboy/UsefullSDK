@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import AVKit
 
 /// Base protocol for modulables.
 public protocol CellModulable { }
 
-/// Data structure for the `UTextCell`.
+/// Data structure for the `TextCellViewModel`.
 public struct TextCellData: CellModulable {
     
     /// Text what will be shown in `textView`.
@@ -35,7 +36,7 @@ public struct TextCellData: CellModulable {
     }
 }
 
-/// Data structure for the `UTitleCell`.
+/// Data structure for the `TitleCellViewModel`.
 public struct TitleCellData: CellModulable {
     
     /// Text what will be shown in `titleLabel`.
@@ -60,7 +61,7 @@ public struct TitleCellData: CellModulable {
     }
 }
 
-/// Data structure for the `ULeftIconCell`.
+/// Data structure for the `LeftIconCellViewModel`.
 public struct LeftIconTextCellData: CellModulable {
     
     /// Text what will be shown in `titleLabel`.
@@ -93,7 +94,7 @@ public struct LeftIconTextCellData: CellModulable {
     }
 }
 
-/// Data structure for the `UExpandableTitleCell`.
+/// Data structure for the `ExpandableTitleCellViewModel`.
 public struct ExpandableTitleCellData: CellModulable {
     
     /// Text what will be shown in `titleLabel`.
@@ -126,7 +127,7 @@ public struct ExpandableTitleCellData: CellModulable {
     }
 }
 
-/// Data structure for the `UAccessoryCell`.
+/// Data structure for the `AccessoryCellViewModel`.
 public struct AccessoryCellData: CellModulable {
     
     /// Text what will be shown in `titleLabel`.
@@ -169,7 +170,7 @@ public struct AccessoryCellData: CellModulable {
     }
 }
 
-/// Data structure for the `UImageCell`.
+/// Data structure for the `ImageCellViewModel`.
 public struct ImageCellData: CellModulable {
     
     /// Text what will be shown in `titleLabel`.
@@ -204,7 +205,7 @@ public struct ImageCellData: CellModulable {
     }
 }
 
-/// Data structure for the `UVideoCell`.
+/// Data structure for the `VideoCellViewModel`.
 public struct VideoCellData: CellModulable {
     
     /// Video will be shown in `videoView`.
@@ -248,7 +249,7 @@ public struct VideoCellData: CellModulable {
     }
 }
 
-/// Data structure for the `UAudioCell`.
+/// Data structure for the `AudioCellViewModel`.
 public struct AudioCellData: CellModulable {
     
     /// Audio will be shown in `audioView`.
@@ -357,6 +358,12 @@ public struct VideoItem: MediaItem {
     /// - Parameter resourceURL: Remote `URL` that needs to be downloaded from resource.
     public init(resourceURL: URL) {
         self.resourceURL = resourceURL
+    }
+    
+    /// Returns `AVPlayer` object.
+    var player: AVPlayer {
+        let player = AVPlayer(url: self.resourceURL)
+        return player
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  UImageCell.swift
+//  LeftIconCellViewModel.swift
 //  
 //
 //  Created by Burak Uzunboy on 26.01.20.
@@ -7,17 +7,17 @@
 
 import UIKit
 
-/// Base cell for `ImageCellModule`.
-open class UImageCell: UBaseTableViewCell {
+/// Base cell for `LeftIconCellModule`.
+open class LeftIconCellViewModel: UBaseTableViewCell {
     
     /// The classes inherited should override this property with the one that is demanded to be used.
     open var titleLabel: UILabel? { return nil }
-        
+    
     /// The classes inherited should override this property with the one that is demanded to be used.
-    open override var imageView: UIImageView? { return nil }
+    open var iconView: UIImageView? { return nil }
     
     /// Module which will load and stylize the cell.
-    var module: ImageCellModule? {
+    var module: LeftIconCellModule? {
         didSet {
             self.reloadUI()
             self.reloadData()
@@ -33,6 +33,7 @@ open class UImageCell: UBaseTableViewCell {
             self.titleLabel?.textAlignment = style.alignment
         }
         
+        self.iconView?.tintColor = style.iconTintColor
     }
     
     open override func reloadData() {
@@ -45,6 +46,6 @@ open class UImageCell: UBaseTableViewCell {
             self.titleLabel?.text = data.title
         }
         
-        self.imageView?.image = data.image?.image
+        self.iconView?.image = data.icon
     }
 }

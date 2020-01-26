@@ -36,8 +36,9 @@ public extension UIColor {
                       alpha: CGFloat(1.0))
         }
     }
-
-    class var systemLabel: UIColor {
+    
+    /// Label color that is trait aware for iOS 13, otherwise black.
+    public class var styleLabel: UIColor {
         if #available(iOS 13.0, *) {
             return .label
         } else {
@@ -45,11 +46,21 @@ public extension UIColor {
         }
     }
     
-    class var systemLink: UIColor {
+    /// Link color that is trait aware for iOS 13, otherwise system blue.
+    public class var styleLink: UIColor {
         if #available(iOS 13.0, *) {
             return .link
         } else {
             return .systemBlue
+        }
+    }
+    
+    /// Background color that is trait aware for iOS 13, otherwise white.
+    public class var styleBackground: UIColor {
+        if #available(iOS 13.0, *) {
+            return .systemBackground
+        } else {
+            return .white
         }
     }
 }

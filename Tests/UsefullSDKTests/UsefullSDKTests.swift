@@ -32,7 +32,7 @@ final class UsefullSDKTests: XCTestCase {
         let tableView = UITableView(frame: .zero)
         let textData = TextCellData(text: "ASD")
         let textStyle = TextCellStyle(textColor: .red, font: .systemFont(ofSize: 15))
-        let textContent = TextCellModule(data: textData, style: textStyle, cell: UTextCell.self)
+        let textContent = TextCellModule(data: textData, style: textStyle, cell: TextCellViewModel.self)
         let contents = [[textContent]]
         let dataSource = ModulableTableViewDataSource(tableView: tableView, contents: contents)
         tableView.reloadData()

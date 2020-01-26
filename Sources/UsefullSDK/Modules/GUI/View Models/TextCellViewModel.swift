@@ -1,5 +1,5 @@
 //
-//  UTextCell.swift
+//  TextCellViewModel.swift
 //  
 //
 //  Created by Burak Uzunboy on 25.01.20.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Base cell for `TextCellModule`.
-open class UTextCell: UBaseTableViewCell {
+open class TextCellViewModel: UBaseTableViewCell {
     
     /// The classes inherited should override this property with the one that is demanded to be used.
     open var textView: UITextView? { return nil }

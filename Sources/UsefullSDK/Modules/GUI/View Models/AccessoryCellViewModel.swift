@@ -1,5 +1,5 @@
 //
-//  UAccessoryCell.swift
+//  AccessoryCellViewModel.swift
 //  
 //
 //  Created by Burak Uzunboy on 26.01.20.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Base cell for `AccessoryCellModule`.
-open class UAccessoryCell: UBaseTableViewCell {
+open class AccessoryCellViewModel: UBaseTableViewCell {
     
     /// The classes inherited should override this property with the one that is demanded to be used.
     open var titleLabel: UILabel? { return nil }
